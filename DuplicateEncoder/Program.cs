@@ -36,7 +36,7 @@ class DuplicateEncoder
         foreach (var c in _input)
         {
             _charCount.TryGetValue(c, out int count);
-            builder.Append(count > ap ? appearMult : appearOnce);
+            builder.Append(count > appearThreshold ? appearMult : appearOnce);
         }
 
         return builder.ToString();
